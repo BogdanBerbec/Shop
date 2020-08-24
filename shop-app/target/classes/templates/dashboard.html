@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h1 th:text="${cartSize}"></h1>
+</div>
+<div th:each = " p : ${products}" style="width: 300px; border: 1px solid violet; border-radius: 20px; margin-bottom: 10px;">
+    <p th:text = "${p.name}"></p>
+    <p th:text = "${p.description}"></p>
+    <form action="/buy" method="post">
+        <input name="id" th:value="${p.id}" hidden>
+        <button>Cumpara</button>
+    </form>
+</div>
+</body>
+</html>
